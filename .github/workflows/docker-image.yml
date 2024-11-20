@@ -33,7 +33,6 @@ jobs:
           echo "local_version=$local_version" >> $GITHUB_ENV
 
       - name: clone
-        if: env.local_version != env.latest_version
         run: |
           git clone -b $latest_version https://github.com/YouROK/TorrServer.git
           curl https://ghp.ci/https://raw.githubusercontent.com/YouROK/TorrServer/refs/heads/master/Dockerfile > ./TorrServer/Dockerfile
