@@ -38,6 +38,8 @@ jobs:
           git clone -b $latest_version https://github.com/YouROK/TorrServer.git
           curl https://ghp.ci/https://raw.githubusercontent.com/YouROK/TorrServer/refs/heads/master/Dockerfile > ./TorrServer/Dockerfile
           tree
+          pwd
+          ls -al
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3.2.0
