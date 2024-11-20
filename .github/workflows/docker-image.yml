@@ -37,10 +37,6 @@ jobs:
         run: |
           git clone -b $latest_version https://github.com/YouROK/TorrServer.git
           curl https://ghp.ci/https://raw.githubusercontent.com/YouROK/TorrServer/refs/heads/master/Dockerfile > ./TorrServer/Dockerfile
-          tree
-          pwd
-          ls -al
-          cat TorrServer/Dockerfile
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3.2.0
@@ -58,7 +54,7 @@ jobs:
         if: env.local_version != env.latest_version
         uses: docker/build-push-action@v6.9.0
         with:
-          context: ./TorrServer
+          context: TorrServer/.
           file: Dockerfile
           push: true # push to docker hub
           tags: |
