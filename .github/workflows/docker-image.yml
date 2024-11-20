@@ -50,12 +50,12 @@ jobs:
           username: 1lkei
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Docker build-push daemon
+      - name: Docker build-push
         if: env.local_version != env.latest_version
         uses: docker/build-push-action@v6.9.0
         with:
-          context: TorrServer/.
-          file: Dockerfile
+          context: TorrServer
+          file: TorrServer/Dockerfile
           push: true # push to docker hub
           tags: |
             1lkei/torrserver:latest
